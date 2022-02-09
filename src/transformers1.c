@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   transformers1.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: joteixei <joteixei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/09 20:06:42 by joteixei          #+#    #+#             */
+/*   Updated: 2022/02/09 20:06:43 by joteixei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_putchar_fd(char c, int fd)
@@ -5,7 +17,7 @@ int	ft_putchar_fd(char c, int fd)
 	return (write(fd, &c, 1));
 }
 
-size_t ft_strlen (const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	count;
 
@@ -17,7 +29,7 @@ size_t ft_strlen (const char *str)
 
 int	ft_putnbr_base(ssize_t nbr, char *base)
 {
-	ssize_t	size_base;
+	ssize_t		size_base;
 	static int	count;
 
 	count = 0;
@@ -58,5 +70,5 @@ int	ft_putnbr_aux(size_t nbr, size_t size_base, int fd, int type)
 		nbr = nbr % size_base;
 		tmp += ft_putchar_fd(base[nbr], 1);
 	}
-	return(tmp);
+	return (tmp);
 }
